@@ -1,8 +1,8 @@
 import requests
 import time
 
-
-apiRequest = requests.get('https://baconipsum.com/api?paras=5&type=meat-and-filler')
+parasCount = int(input("Enter paragraph count: "))
+apiRequest = requests.get('https://baconipsum.com/api?paras={}&type=meat-and-filler'.format(parasCount))
 
 textList = apiRequest.text.split('","')
 textList.reverse()
